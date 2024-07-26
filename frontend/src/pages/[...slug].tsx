@@ -48,40 +48,15 @@ const ContentRenderer: React.FC<ContentRendererProps> = ({ content }) => {
 };
 
 const findPage = (pages: ContentPages, slugs: string[]): ContentPage | null => {
-  let current: ContentPages | ContentPage = pages;
-
+  let current = pages as ContentPages | ContentPage;
   for (const slug of slugs) {
-    if (isContentPages(current) && slug in current) {
-      current = current[slug];
+    if (typeof current === 'object' && slug in current) {
+      current = current[slug] as ContentPages | ContentPage;
     } else {
       return null;
     }
   }
-
-  return isContentPage(current) ? current : null;
-};
-
-// Type guards
-const isContentPage = (
-  value: ContentPage | ContentPages,
-): value is ContentPage => {
-  return (
-    value &&
-    typeof value === 'object' &&
-    'properties' in value &&
-    'contents' in value
-  );
-};
-
-const isContentPages = (
-  value: ContentPage | ContentPages,
-): value is ContentPages => {
-  return (
-    value &&
-    typeof value === 'object' &&
-    !('properties' in value) &&
-    !('contents' in value)
-  );
+  return current as ContentPage;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
