@@ -1,11 +1,9 @@
 import type { ReactElement, ReactNode } from 'react';
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
-import './../styles/reset.scss';
-import './../styles/defaults.scss';
-import './../styles/global.scss';
-import { AppProvider } from '@frontend/contexts/App.context';
-// import {AppProvider} from '@frontend/contexts/App.context';
+import '../styles/reset.scss';
+import '../styles/defaults.scss';
+import '../styles/global.scss';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -20,9 +18,5 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout ?? ((page) => page);
 
-  return (
-    // <ApolloProvider client={apolloClient}>
-    <AppProvider>{getLayout(<Component {...pageProps} />)}</AppProvider>
-    // </ApolloProvider>
-  );
+  return <>{getLayout(<Component {...pageProps} />)}</>;
 }

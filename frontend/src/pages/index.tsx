@@ -4,7 +4,7 @@ import { Component } from '@frontend/components';
 import { usePage } from '@frontend/hooks/usePage';
 
 function Page() {
-  const title = usePage('title');
+  const title = usePage('Home');
 
   return (
     <>

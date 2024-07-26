@@ -1,3 +1,1 @@
-export const dashboardPrefix = 'Dashboard.';
-export const commandsPrefix = dashboardPrefix + 'commands.';
-
+export const frontendPrefix = 'Frontend.';

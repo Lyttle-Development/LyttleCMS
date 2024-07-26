@@ -1,2 +1,1 @@
-export * from './app.constant';
-export * from './api.constant';
+export * from './frontend.constants';

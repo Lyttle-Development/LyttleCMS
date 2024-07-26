@@ -1,7 +1,7 @@
 import * as Imports from './imports';
-import { dashboardPrefix } from '@frontend/utils';
+import { frontendPrefix } from '@frontend/utils';
 
-export const componentsPrefix = dashboardPrefix + 'components.';
+export const componentsPrefix = frontendPrefix + 'components.';
 
 export const Component = Imports;
 export default Imports;

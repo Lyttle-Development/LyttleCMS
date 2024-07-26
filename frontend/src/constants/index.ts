@@ -1,3 +1,3 @@
 import * as Imports from './imports';
 
-export const Constants = Imports;
+export const CONSTANTS = Imports;

@@ -1,5 +1,4 @@
 import remarkGfm from 'remark-gfm';
-import { Link } from '../link';
 import { MarkdownComponents } from './';
 import { Components } from 'react-markdown';
 
@@ -14,11 +13,6 @@ export const components: Components = {
   h4: 'h5',
   h5: 'h6',
   h6: 'p',
-  a: ({ ...props }) =>
-    Link({
-      href: props.href,
-      children: props.children,
-    }),
   ol: ({ ...props }) =>
     MarkdownComponents.List({
       children: props.children,
@@ -28,10 +22,5 @@ export const components: Components = {
     MarkdownComponents.List({
       children: props.children,
       ordered: false,
-    }),
-  code: ({ ...props }) =>
-    MarkdownComponents.Code({
-      children: props.children,
-      className: props.className,
     }),
 };
