@@ -5,6 +5,9 @@ import '../styles/reset.scss';
 import '../styles/defaults.scss';
 import '../styles/global.scss';
 
+// Custom component libraries
+import '@radix-ui/themes/styles.css';
+
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
