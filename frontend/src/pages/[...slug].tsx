@@ -2,7 +2,6 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { CONTENT } from '@frontend/_content';
 import { ContentPage, ContentPages } from '@frontend/types/content';
 import { Component } from '@frontend/components';
-import { findPage } from '@frontend/utils/find-page';
 import { ErrorPage } from '@frontend/pages/_error';
 
 interface PageProps {
@@ -24,9 +23,16 @@ export function Page({ page }: PageProps) {
   );
 }
 
+export interface StaticPaths {
+  params: { slug: string[] };
+}
+
 export const getStaticPaths: GetStaticPaths = async () => {
-  const generatePaths = (pages: ContentPages, basePath: string[] = []) => {
-    let paths: { params: { slug: string[] } }[] = [];
+  const generatePaths = (
+    pages: ContentPages,
+    basePath: string[] = [],
+  ): StaticPaths[] => {
+    let paths: StaticPaths[] = [];
     for (const key in pages) {
       const value = pages[key];
       if ('properties' in value && 'contents' in value) {
@@ -45,6 +51,22 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
+  const findPage = (
+    pages: ContentPages,
+    slugs: string[],
+  ): ContentPage | null => {
+    let current = pages as ContentPages | ContentPage;
+    for (const slug of slugs) {
+      if (typeof current === 'object' && slug in current) {
+        // @ts-expect-error This is safe because we checked if the key exists
+        current = current[slug] as ContentPages | ContentPage;
+      } else {
+        return null;
+      }
+    }
+    return current as ContentPage;
+  };
+
   const { slug } = context.params as { slug: string[] };
   const page = findPage(CONTENT.pages, slug) || null;
 
