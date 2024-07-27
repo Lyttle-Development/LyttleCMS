@@ -2,6 +2,7 @@ import {
   ContentPageContentBase,
   ContentTypesText,
 } from '@frontend/components/_content-renderer';
+import styles from './paragraph.module.scss';
 
 export interface ParagraphProperties {
   text: string;
@@ -13,10 +14,12 @@ export interface ParagraphContent extends ContentPageContentBase {
 }
 
 export interface ParagraphProps {
-  children?: React.ReactNode;
   properties: ParagraphProperties;
 }
 
-export function Paragraph({ children, properties }: ParagraphProps) {
-  return <span>Not implemented</span>;
+export function Paragraph({ properties }: ParagraphProps) {
+  const text = properties.text || 'Empty paragraph';
+  const noText = !properties.text;
+
+  return <p className={`${noText && styles['no-text']}`}>{text}</p>;
 }

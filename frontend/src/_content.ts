@@ -8,7 +8,7 @@ import {
 
 export const CONTENT: Content = {
   properties: {
-    title: 'Learning Platform',
+    title: 'Frontend',
   },
   pages: {
     home: {
@@ -19,7 +19,7 @@ export const CONTENT: Content = {
         {
           type: ContentTypesText.Paragraph,
           properties: {
-            text: 'Welcome to the Learning Platform!',
+            text: 'Sample Text',
           },
         },
       ],
@@ -38,7 +38,7 @@ export const CONTENT: Content = {
             {
               type: ContentTypesText.Paragraph,
               properties: {
-                text: 'About the Learning Platform',
+                text: 'Sample Text',
               },
             },
             {
@@ -50,13 +50,19 @@ export const CONTENT: Content = {
                 {
                   type: ContentTypesText.Paragraph,
                   properties: {
-                    text: 'About the Learning Platform',
+                    text: 'Sample Text',
                   },
                 },
                 {
                   type: ContentTypesText.Paragraph,
                   properties: {
-                    text: 'About the Learning Platform',
+                    text: 'Sample Text',
+                  },
+                },
+                {
+                  type: ContentTypesText.Paragraph,
+                  properties: {
+                    text: 'Sample Text',
                   },
                 },
               ],
@@ -70,13 +76,13 @@ export const CONTENT: Content = {
                 {
                   type: ContentTypesText.Paragraph,
                   properties: {
-                    text: 'About the Learning Platform',
+                    text: 'Sample Text',
                   },
                 },
                 {
                   type: ContentTypesText.Paragraph,
                   properties: {
-                    text: 'About the Learning Platform',
+                    text: 'Sample Text',
                   },
                 },
               ],
