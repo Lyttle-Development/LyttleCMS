@@ -1,3 +1,5 @@
+import { ContentPageContent } from '@frontend/components/_content-renderer';
+
 export interface Content {
   properties: ContentProperties;
   pages: ContentPages;
@@ -18,11 +20,6 @@ export interface ContentPage {
 
 export interface ContentPageProperties {
   title: string;
-}
-
-export interface ContentPageContent {
-  type: string;
-  properties: ContentPageContentProperties;
 }
 
 export interface ContentPageContentProperties {

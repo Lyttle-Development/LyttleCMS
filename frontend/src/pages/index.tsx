@@ -14,12 +14,11 @@ export function Page({ page }: PageProps) {
   }
 
   return (
-    <div>
-      <h1>{page.properties.title}</h1>
-      {page.contents.map((contentItem, index) => (
+    <>
+      {page?.contents?.map((contentItem, index) => (
         <Component.ContentRenderer key={index} content={contentItem} />
-      ))}
-    </div>
+      )) || null}
+    </>
   );
 }
 
