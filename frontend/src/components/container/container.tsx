@@ -4,7 +4,7 @@ import {
   ContentTypesSpacing,
 } from '@frontend/components/_content-renderer';
 
-interface ContainerProperties {
+export interface ContainerProperties {
   width: number;
 }
 

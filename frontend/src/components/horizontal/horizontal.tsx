@@ -4,7 +4,7 @@ import {
 } from '@frontend/components/_content-renderer';
 import styles from './horizontal.module.scss';
 
-interface HorizontalProperties {
+export interface HorizontalProperties {
   width: number;
 }
 

@@ -3,7 +3,7 @@ import {
   ContentTypesSpacing,
 } from '@frontend/components/_content-renderer';
 
-interface LineProperties {
+export interface LineProperties {
   thickness: number;
 }
 

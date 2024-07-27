@@ -3,7 +3,7 @@ import {
   ContentTypesSpacing,
 } from '@frontend/components/_content-renderer';
 
-interface VerticalProperties {
+export interface VerticalProperties {
   height: number;
 }
 

@@ -3,7 +3,7 @@ import {
   ContentTypesText,
 } from '@frontend/components/_content-renderer';
 
-interface QuoteProperties {
+export interface QuoteProperties {
   text: string;
   author?: string; // Optional property
 }

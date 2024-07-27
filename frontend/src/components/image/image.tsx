@@ -3,7 +3,7 @@ import {
   ContentTypesVisual,
 } from '@frontend/components/_content-renderer';
 
-interface ImageProperties {
+export interface ImageProperties {
   src: string;
   alt: string;
 }

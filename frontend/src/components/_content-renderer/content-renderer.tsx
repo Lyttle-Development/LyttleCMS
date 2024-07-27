@@ -3,11 +3,11 @@ import { ParagraphContent } from '@frontend/components/paragraph';
 import { TitleContent } from '@frontend/components/title';
 import { HorizontalContent } from '@frontend/components/horizontal';
 import { ImageContent } from '@frontend/components/image';
-import { SubtitleContent } from '@frontend/components/quote';
-import { QuoteContent } from '@frontend/components/subtitle';
+import { QuoteContent } from '@frontend/components/quote';
 import { VerticalContent } from '@frontend/components/vertical';
 import { LineContent } from '@frontend/components/line';
 import { ContainerContent } from '@frontend/components/container';
+import { SubtitleContent } from '@frontend/components/subtitle';
 
 export type ContentTypes =
   | ContentTypesVisual
@@ -17,8 +17,8 @@ export type ContentTypes =
 export type ContentPageContent =
   | ParagraphContent
   | TitleContent
-  | SubtitleContent
   | QuoteContent
+  | SubtitleContent
   | ImageContent
   | HorizontalContent
   | VerticalContent
@@ -74,7 +74,7 @@ export const ContentRenderer: React.FC<ContentRendererProps> = ({
     case ContentTypesText.Title:
       return <Component.Title properties={content.properties} />;
     case ContentTypesText.Subtitle:
-      return <Component.Subtitle properties={content.properties} />;
+      return <Component.Quote properties={content.properties} />;
     case ContentTypesText.Quote:
       return <Component.Quote properties={content.properties} />;
 

@@ -61,6 +61,26 @@ export const CONTENT: Content = {
                 },
               ],
             },
+            {
+              type: ContentTypesSpacing.Horizontal,
+              properties: {
+                width: 1,
+              },
+              contents: [
+                {
+                  type: ContentTypesText.Paragraph,
+                  properties: {
+                    text: 'About the Learning Platform',
+                  },
+                },
+                {
+                  type: ContentTypesText.Paragraph,
+                  properties: {
+                    text: 'About the Learning Platform',
+                  },
+                },
+              ],
+            },
           ],
         },
       ],

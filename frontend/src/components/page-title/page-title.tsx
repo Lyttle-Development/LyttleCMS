@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { CONSTANTS } from '@frontend/constants';
 
-interface PageTitleProps {
+export interface PageTitleProps {
   children?: React.ReactNode;
 }
 

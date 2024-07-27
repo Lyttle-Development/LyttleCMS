@@ -1,10 +1,10 @@
 import { ContentPage } from '@frontend/types/content';
-import { Component } from '@frontend/components';
 import Error404 from '@frontend/pages/404';
 import { Lib } from '@frontend/libs';
 import { GetStaticProps } from 'next';
+import { ContentRenderer } from '@frontend/components/_content-renderer';
 
-interface PageProps {
+export interface PageProps {
   page: ContentPage | null;
 }
 
@@ -16,7 +16,7 @@ export function Page({ page }: PageProps) {
   return (
     <>
       {page?.contents?.map((contentItem, index) => (
-        <Component.ContentRenderer key={index} content={contentItem} />
+        <ContentRenderer key={index} content={contentItem} />
       )) || null}
     </>
   );

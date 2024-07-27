@@ -3,7 +3,7 @@ import {
   ContentTypesText,
 } from '@frontend/components/_content-renderer';
 
-interface SubtitleProperties {
+export interface SubtitleProperties {
   text: string;
 }
 

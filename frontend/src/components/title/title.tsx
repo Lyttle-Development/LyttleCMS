@@ -3,7 +3,7 @@ import {
   ContentTypesText,
 } from '@frontend/components/_content-renderer';
 
-interface TitleProperties {
+export interface TitleProperties {
   text: string;
   level: number; // Example additional property
 }

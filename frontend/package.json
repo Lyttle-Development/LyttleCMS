@@ -5,6 +5,7 @@
   "scripts": {
     "start": "next start -p 3000",
     "start:dev": "npx rimraf ./.next && next dev -p 8080",
+    "start:dev:prod": "npx rimraf ./.next && npm run build && next start -p 8080",
     "build": "next build",
     "lint": "next lint"
   },
